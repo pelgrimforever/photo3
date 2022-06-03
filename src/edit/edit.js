@@ -51,7 +51,7 @@ class Edit extends React.Component {
   loadphotos = async (film) => {
     if(film!=null) {
       this.setState( { loading: true } );
-      const photos = await Rsphoto.loadPhotos4film(film.PK);
+      const photos = await Rsphoto.loadPhotos4film(Store.user, film.PK);
       this.setState( { 
         loading: false,
         film: film,

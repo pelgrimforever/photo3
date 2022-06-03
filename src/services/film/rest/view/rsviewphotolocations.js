@@ -1,4 +1,4 @@
-//ProjectGenerator: NO AUTHOMATIC UPDATE
+//Metacoder: NO AUTHOMATIC UPDATE
 //Change function definitions here, NOT in rsviewphotolocationssuper.js
 /* 
     Created on : Dec 16, 2018, 18:55:01
@@ -14,9 +14,9 @@ class Rsviewphotolocations extends Rsviewphotolocationssuper {
   static getall = async (user) => {
     const postdata = {
     	auth: user!=null ? user.auth : null,
-      operation: { type: super.OPERATIONTYPE_SELECT, operation: this.SECURESELECT_ALL }
+      operation: this.SECURESELECT_ALL
     }
-    return super.extractDataArray(await super.post(super.restservice, postdata));
+    return super.extractDataArray(await super.post(super.restserviceselect, postdata));
   }
 
 }

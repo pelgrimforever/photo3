@@ -44,7 +44,7 @@ function Selectphotodialog(props) {
       setLoading(true);
       let filmpk = new Filmpk();
       filmpk.id = newfilmid;
-      const filmphotos = await Rsphoto.sec_loadPhotos4film(Store.user, filmpk);
+      const filmphotos = await Rsphoto.loadPhotos4film(Store.user, filmpk);
       let locations = [];
       //filter photos with a location
       for(let i = 0; i < filmphotos.length; i++) {

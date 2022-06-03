@@ -22,7 +22,7 @@ function Selectcreators(props) {
   const [creators, setCreators] = useState([]);
 
   const loadCreators = async () => {
-    const creatorlist = await Rscreator.getall();
+    const creatorlist = await Rscreator.getall(Store.user);
     setCreators(creatorlist);
   };
 

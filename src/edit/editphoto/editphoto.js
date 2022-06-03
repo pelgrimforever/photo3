@@ -52,7 +52,7 @@ class Editphoto extends React.Component {
 
   updatedPhotolocation = async (photo) => {
     const result = await Rsphoto.updGeolocation(Store.user, photo);
-    const updatedphoto = await Rsphoto.getOne(photo.PK);
+    const updatedphoto = await Rsphoto.getOne(Store.user, photo.PK);
     //this does update the photo in the array, which is not 100% "by the book" but prevents reloading the complete array
     photo.routePK = updatedphoto.routePK;
     photo.streetnumber = updatedphoto.streetnumber;
@@ -64,7 +64,7 @@ class Editphoto extends React.Component {
   copyPrevGeolocation = async (photo) => {
     const result = await Rsphoto.copyPrevGeolocation(Store.user, photo);
     if(result.status==="OK") {
-      const updatedphoto = await Rsphoto.getOne(photo.PK);
+      const updatedphoto = await Rsphoto.getOne(Store.user, photo.PK);
       //this does update the photo in the array, which is not 100% "by the book" but prevents reloading the complete array
       photo.location = updatedphoto.location;
       photo.reversegeocode = updatedphoto.reversegeocode;
@@ -85,7 +85,7 @@ class Editphoto extends React.Component {
   copyPhotoGeolocation = async (photo, photopk) => {
     const result = await Rsphoto.copyPhotoGeolocation(Store.user, photo, photopk);
     if(result.status==="OK") {
-      const updatedphoto = await Rsphoto.getOne(photo.PK);
+      const updatedphoto = await Rsphoto.getOne(Store.user, photo.PK);
       //this does update the photo in the array, which is not 100% "by the book" but prevents reloading the complete array
       photo.location = updatedphoto.location;
       photo.reversegeocode = updatedphoto.reversegeocode;

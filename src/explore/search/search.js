@@ -98,7 +98,7 @@ class Search extends React.Component {
 
       const searcher = Photosearchbuilder.buildSearcher(this.state.searchcriteria);
       if(searcher.used()) {
-        amount = await Rsphoto.sec_searchcount(Store.user, searcher);
+        amount = await Rsphoto.searchcount(Store.user, searcher);
         if(amount<maxresults+1) {
           data = await Rsphoto.searchwithimages(Store.user, searcher);
         }

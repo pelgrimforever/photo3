@@ -1,9 +1,8 @@
 //Auto generated code
 //don't change things here, it will be overwritten
-//redefine classes in Rsviewphotofirstlastdateservice.js
 /* 
     Created on : Dec 16, 2018, 18:24:01
-    Generated on 22.1.2021 11:47
+    Generated on 1.5.2022 20:24
     Author     : Franky Laseure
 */
 
@@ -13,6 +12,7 @@ import ViewphotofirstlastdateJson from '../conversion/viewphotofirstlastdatejson
 
 class Rsviewphotofirstlastdatesuper extends Filmservice {
 
+	static restserviceselect = 'rsview_photo_firstlastdate_select';
 	static restservice = 'rsview_photo_firstlastdate';
 
 	static extractDataArray = (jsonarray): Viewphotofirstlastdate[] => {
@@ -30,9 +30,9 @@ class Rsviewphotofirstlastdatesuper extends Filmservice {
   static getall = async (user) => {
     const postdata = {
     	auth: user!=null ? user.auth : null,
-      operation: { type: super.OPERATIONTYPE_SELECT, operation: super.SELECT_ALL }
+      operation: super.SELECT_ALL
     }
-    return this.extractDataArray(await super.post(this.restservice, postdata));
+    return this.extractDataArray(await super.post(this.restserviceselect, postdata));
   }
 
 }

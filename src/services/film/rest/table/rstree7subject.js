@@ -1,4 +1,4 @@
-//ProjectGenerator: NO AUTHOMATIC UPDATE
+//Metacoder: NO AUTHOMATIC UPDATE
 //Change function definitions here, NOT in rstree7subjectsuper.js
 /* 
     Created on : Nov 20, 2018, 10:39:01 AM
@@ -18,25 +18,25 @@ class Rstree7subject extends Rstree7subjectsuper {
 
   static getStep1 = async (): Tree7subject[] => {
     const postdata = {
-      operation: { type: super.OPERATIONTYPE_SELECT, operation: this.SELECT_STEP1 }
+      operation: this.SELECT_STEP1
     }
-    return this.extractDataArray(await super.post(this.restservice, postdata));
+    return this.extractDataArray(await super.post(this.restserviceselect, postdata));
   }
 
   static getChildren = async (tree7subjectpk): Tree7subject[] => {
     const postdata = {
-      operation: { type: super.OPERATIONTYPE_SELECT, operation: this.SELECT_CHILDREN4PARENT },
+      operation: this.SELECT_CHILDREN4PARENT,
       "tree7subjectpk": Tree7subjectJson.PKtoJSON(tree7subjectpk)
     }
-    return this.extractArrayWithParents(await super.post(this.restservice, postdata));
+    return this.extractArrayWithParents(await super.post(this.restserviceselect, postdata));
   }
 
   static getSearchtext = async (searchtext): Tree7subject[] => {
     const postdata = {
-      operation: { type: super.OPERATIONTYPE_SELECT, operation: this.SELECT_SEARCHTEXT },
+      operation: this.SELECT_SEARCHTEXT,
       "searchtext": searchtext
     }
-    return this.extractArrayWithParents(await super.post(this.restservice, postdata));
+    return this.extractArrayWithParents(await super.post(this.restserviceselect, postdata));
   }
 
   static extractArrayWithParents(jsonarray) {
@@ -57,10 +57,10 @@ class Rstree7subject extends Rstree7subjectsuper {
 
   static loadTree7subject4photo = async (photopk: Photopk): Tree7subject[] => {
     const postdata = {
-      operation: { type: super.OPERATIONTYPE_SELECT, operation: this.SELECT_PHOTOPK },
+      operation: this.SELECT_PHOTOPK,
       "photopk": PhotoJson.PKtoJSON(photopk)
     }
-    return this.extractDataArray(await super.post(this.restservice, postdata));
+    return this.extractDataArray(await super.post(this.restserviceselect, postdata));
   }
 
 }

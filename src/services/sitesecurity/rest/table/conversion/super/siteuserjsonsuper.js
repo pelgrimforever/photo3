@@ -1,9 +1,8 @@
 //Auto generated code
 //don't change things here, it will be overwritten
-//change in siteuser-json.js
 /* 
     Created on : Nov 19, 2018, 12:42:01 PM
-    Generated on 7.2.2021 14:55
+    Generated on 1.5.2022 21:58
     Author     : Franky Laseure
 */
 

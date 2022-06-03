@@ -125,43 +125,43 @@ function Selectlocations(props) {
   }
 
   const loadCountries = async () => {
-    const countrylist = await Rscountry.getall();
+    const countrylist = await Rscountry.getall(Store.user);
     resetTreecountry();
     setTreecountries(countrylist);
   };
 
   const loadAl1s = async (country) => {
-    const list = await Rsarealevel1.search(Locationsearchbuilder.getAl1searcher(country.PK));
+    const list = await Rsarealevel1.search(Locationsearchbuilder.getAl1searcher(Store.user, country.PK));
     resetA11();
     setTreeal1s(list);
   };
 
   const loadAl2s = async (al1) => {
-    const list = await Rsarealevel2.search(Locationsearchbuilder.getAl2searcher(al1.PK));
+    const list = await Rsarealevel2.search(Locationsearchbuilder.getAl2searcher(Store.user, al1.PK));
     resetA12();
     setTreeal2s(list);
   };
 
   const loadAl3s = async (al2) => {
-    const list = await Rsarealevel3.search(Locationsearchbuilder.getAl3searcher(al2.PK));
+    const list = await Rsarealevel3.search(Locationsearchbuilder.getAl3searcher(Store.user, al2.PK));
     resetA13();
     setTreeal3s(list);
   };
 
   const loadLocalities = async (al3) => {
-    const list = await Rslocality.search(Locationsearchbuilder.getLocalitysearcher(al3.PK));
+    const list = await Rslocality.search(Locationsearchbuilder.getLocalitysearcher(Store.user, al3.PK));
     resetLocality();
     setTreelocalities(list);
   };
 
   const loadSublocalities = async (locality) => {
-    const list = await Rssublocality.search(Locationsearchbuilder.getSublocalitysearcher(locality.PK));
+    const list = await Rssublocality.search(Locationsearchbuilder.getSublocalitysearcher(Store.user, locality.PK));
     resetSublocality();
     setTreesublocalities(list);
   };
 
   const loadRoutes = async (sublocality) => {
-    const list = await Rsroute.search(Locationsearchbuilder.getRoutesearcher(sublocality.PK));
+    const list = await Rsroute.search(Locationsearchbuilder.getRoutesearcher(Store.user, sublocality.PK));
     setTreeroutes(list);
   };
 
@@ -171,10 +171,10 @@ function Selectlocations(props) {
   
   const searchtext = async () => {
     const text = inputlocationtext.current.value;
-    setCountries(await Rscountry.search(Locationsearchbuilder.textCountrysearcher(text)));
-    setLocalities(await Rslocality.search(Locationsearchbuilder.textLocalitysearcher(text)));
-    setSublocalities(await Rssublocality.search(Locationsearchbuilder.textSublocalitysearcher(text)));
-    setRoutes(await Rsroute.search(Locationsearchbuilder.textRoutesearcher(text)));
+    setCountries(await Rscountry.search(Store.user, Locationsearchbuilder.textCountrysearcher(text)));
+    setLocalities(await Rslocality.search(Store.user, Locationsearchbuilder.textLocalitysearcher(text)));
+    setSublocalities(await Rssublocality.search(Store.user, Locationsearchbuilder.textSublocalitysearcher(text)));
+    setRoutes(await Rsroute.search(Store.user, Locationsearchbuilder.textRoutesearcher(text)));
   }
 
   const onlocationtextKeyUp = (e) => {

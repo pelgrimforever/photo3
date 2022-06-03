@@ -1,9 +1,8 @@
 //Auto generated code
 //don't change things here, it will be overwritten
-//extend classes in uploadsessionsettings.ts for table class definitions
 /* 
     Created on : Nov 16, 2018, 17:04:01 PM
-    Generated on 22.1.2021 11:47
+    Generated on 1.5.2022 20:24
     Author     : Franky Laseure
 */
 

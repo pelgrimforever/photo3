@@ -66,7 +66,7 @@ class Explorelocation extends React.Component {
       if(Store.user.loggedin) {
         data = await Rsviewphotolocations.getall(Store.user);
       } else {
-        data = await Rsviewpublicphotolocations.getall();
+        data = await Rsviewpublicphotolocations.getall(Store.user);
       }
 
       this.setState( { 

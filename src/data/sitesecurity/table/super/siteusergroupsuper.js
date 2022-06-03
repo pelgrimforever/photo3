@@ -1,9 +1,8 @@
 //Auto generated code
 //don't change things here, it will be overwritten
-//extend classes in siteusergroup.ts for table class definitions
 /* 
     Created on : Nov 16, 2018, 17:04:01 PM
-    Generated on 7.2.2021 14:55
+    Generated on 1.5.2022 21:58
     Author     : Franky Laseure
 */
 
@@ -16,6 +15,8 @@ import Stringsearcher from '../../../search/stringsearcher.js';
 import Foreignkeysearcher from '../../../search/foreignkeysearcher.js';
 import Primarykeysearcher from '../../../search/primarykeysearcher.js';
 import Relationalkeysearcher from '../../../search/relationalkeysearcher.js';
+import {Siteuserpk} from './siteusersuper.js';
+import {Sitegrouppk} from './sitegroupsuper.js';
 
 export class Siteusergrouppk {
 	siteuserPK: Siteuserpk = null;

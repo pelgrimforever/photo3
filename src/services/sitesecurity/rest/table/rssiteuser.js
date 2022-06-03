@@ -1,4 +1,4 @@
-//ProjectGenerator: NO AUTHOMATIC UPDATE
+//Metacoder: NO AUTHOMATIC UPDATE
 //Change function definitions here, NOT in rssiteusersuper.js
 /* 
     Created on : Nov 20, 2018, 10:39:01 AM
@@ -13,10 +13,10 @@ class Rssiteuser extends Rssiteusersuper {
 
 	static authenticate = async (data): Siteuser => {
     const postdata = {
-      operation: { type: super.OPERATIONTYPE_SELECT, operation: this.SELECT_AUTHENTICATE },
+      operation: this.SELECT_AUTHENTICATE,
       "data": data
     }
-    return super.extractDataObject(await super.post(super.restservice, postdata));
+    return super.extractDataObject(await super.post(super.restserviceselect, postdata));
 	}
 }
 
