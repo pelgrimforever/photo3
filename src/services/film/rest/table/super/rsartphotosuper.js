@@ -2,7 +2,7 @@
 //don't change things here, it will be overwritten
 /* 
     Created on : Nov 20, 2018, 10:39:01 AM
-    Generated on 1.5.2022 20:24
+    Generated on 23.8.2022 14:35
     Author     : Franky Laseure
 */
 
@@ -29,7 +29,6 @@ class Rsartphotosuper extends Filmservice {
 
   //SELECT OPERATIONS
   static SELECT_ARTPHOTO = 2;
-  static SELECT_Siteusergroup = 100 + 0;
   static SELECT_Photo = 100 + 0;
   static SELECT_Artsubgroup = 100 + 1;
   static SELECT_Artacademy = 100 + 2;
